@@ -70,7 +70,10 @@ describe('Captcha', function () {
             expect(captcha.getLeftOperand()).toBe('Five')
         })
 
-        
+        test('Get right-operand should be 1', () => {
+            const captcha = new CaptCha(2, 1, 1, 1)
+            expect(captcha.getRightOperand()).toBe('1')
+        })
     });
 
 });

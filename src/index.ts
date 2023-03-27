@@ -20,6 +20,7 @@ class Captcha {
     }
 
     public getRightOperand(): string {
+        if (this.pattern === 2) return "1"
        return numericString[this.rightOperand]
     }
 
