@@ -20,7 +20,10 @@ class Captcha {
     }
 
     public getRightOperand(): string {
-        if (this.pattern === 2) return "1"
+        if (this.pattern === 2) {
+            if (this.rightOperand === 9) return '9'
+            return '1'
+        }
        return numericString[this.rightOperand]
     }
 
