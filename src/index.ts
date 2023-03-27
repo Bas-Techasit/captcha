@@ -1,5 +1,4 @@
 
-
 class Captcha {
 
     private readonly leftOperand: number
@@ -15,13 +14,15 @@ class Captcha {
     }
 
     public getLeftOperand(): string {
-       if (this.pattern === 2) return numericString[this.leftOperand]
-        return this.leftOperand.toString()
+        if (this.pattern === 2)
+           return numericString[this.leftOperand]
+       return this.leftOperand.toString()
     }
 
     public getRightOperand(): string {
-        if (this.pattern === 2) return this.rightOperand.toString()
-       return numericString[this.rightOperand]
+        if (this.pattern === 2)
+            return this.rightOperand.toString()
+        return numericString[this.rightOperand]
     }
 
     public getOperator(): string {
@@ -42,6 +43,5 @@ enum numericString {
     Eight ,
     "Nine",
 }
-
 
 module.exports = Captcha

@@ -1,9 +1,24 @@
-import exp from "constants";
-
 const CaptCha = require('../index')
 
-
 describe('Captcha', function () {
+
+    describe('Operator', function () {
+
+        test('Get operator should be +', () => {
+            const captcha = new CaptCha(1, 1, 1, 1)
+            expect(captcha.getOperator()).toBe("+")
+        })
+
+        test('Get operator should be -', () => {
+            const captcha = new CaptCha(1, 1, 2, 1)
+            expect(captcha.getOperator()).toBe("-")
+        })
+
+        test('Get operator should be *', () => {
+            const captcha = new CaptCha(1, 1, 3, 1)
+            expect(captcha.getOperator()).toBe("*")
+        })
+    });
 
     describe('First Pattern', function () {
 
@@ -37,20 +52,6 @@ describe('Captcha', function () {
             expect(captcha.getRightOperand()).toBe("Five")
         })
 
-        test('Get operator should be +', () => {
-            const captcha = new CaptCha(1, 1, 1, 1)
-            expect(captcha.getOperator()).toBe("+")
-        })
-
-        test('Get operator should be -', () => {
-            const captcha = new CaptCha(1, 1, 2, 1)
-            expect(captcha.getOperator()).toBe("-")
-        })
-
-        test('Get operator should be *', () => {
-            const captcha = new CaptCha(1, 1, 3, 1)
-            expect(captcha.getOperator()).toBe("*")
-        })
     });
 
     describe('Second Pattern', function () {
@@ -85,5 +86,4 @@ describe('Captcha', function () {
             expect(captcha.getRightOperand()).toBe('5')
         })
     });
-
 });
