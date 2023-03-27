@@ -79,6 +79,11 @@ describe('Captcha', function () {
             const captcha = new CaptCha(2, 1, 1, 9)
             expect(captcha.getRightOperand()).toBe('9')
         })
+
+        test('Get right-operand should be 5', () => {
+            const captcha = new CaptCha(2, 1, 1, 5)
+            expect(captcha.getRightOperand()).toBe('5')
+        })
     });
 
 });
